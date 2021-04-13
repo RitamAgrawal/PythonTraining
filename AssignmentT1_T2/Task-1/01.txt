@@ -1,0 +1,77 @@
+#1. Create three variables in a single line and assign values to them in such a manner that each one of
+#them belongs to a different data type.
+a,b,c = 1, 2.01, "ConsultAdd"
+print a,b,c
+
+
+#2. Create a variable of type complex and swap it with another variable of type integer.
+num_1 = 5+6j
+num_2 = 100
+num_1, num_2 = num_2, num_1
+print ("num_1:",num_1,"num_2:",num_2)
+
+
+#3. Swap two numbers using a third variable and do the same task without using any third variable.
+num_1 = 123
+num_2 = 567
+#swaping without using third variable
+num_1, num_2 = num_2, num_1
+print ("num_1:", num_1, "num_2:", num_2)
+#swaping using third variable
+a = 98
+b = 78
+c = 0
+print ("Before swapping, the value of a is {} & the value of b is {}".format(a,b))
+c = a
+a = b
+b = c
+print ("After swapping, the value of a is {} & the value of b is {}".format(a,b))
+
+
+#4. Write a program that takes input from the user and prints it using both Python 2.x and Python 3.x
+# Version.
+idea = input("Enter your Name: ")
+print (idea)
+# print user_input
+
+
+# 5. Write a program to complete the task given below:
+# Ask users to enter any 2 numbers in between 1-10 ,  
+a = int(input("Enter any number in between 1-10: "))
+b = int(input("Enter any number in between 1-10: "))
+# add the two numbers and keep the sum in another variable called z.
+z = a + b
+# Add 30 to z and store the output in variable result. 
+result = z + 30
+# and print result as the final output.
+print ("Final output: ",result)
+
+# 6. Write a program to check the data type of the entered values.
+# HINT: Printed output should say - The data type of the input value is : int/float/string/etc
+inp = eval(input("Enter a value: "));
+print("The data type of the input value is :", type(inp))
+
+# 7. Create Variables using formats such as,
+# Upper CamelCase
+UserName = "Bob"
+
+# Lower CamelCase
+userLastName = "Brooks"
+
+# SnakeCase
+user_email_address = "bob.brooks@gmail.com"
+
+# UPPERCASE.
+PHONENUMBER = 5676782312
+
+#To check if the variable is assigned correctly or not, checking with print command
+print(UserName, userLastName, user_email_address, PHONENUMBER)
+
+8. If one data type value is assigned to ‘a’ variable and then a different data type value is assigned to ‘a’
+again. Will it change the value? If Yes then Why?
+
+a = "Count" #string data type
+a = 786 #integer data type
+print(a) # it prints the integer
+
+Yes, it will change the value. It is so because the value to variable 'a' is being reassigned. Python is an interpreted language, which runs line by line. So the latest value assigned to variable 'a' will be retained irrespective of the data type. We can verify it by printing the value of variable 'a'.
