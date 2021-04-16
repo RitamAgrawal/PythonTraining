@@ -1,0 +1,201 @@
+1. Write a program to reverse a string.
+
+sample1 = "1234abcd"
+output = sample1[::-1]
+print(output)
+========================================================================================
+
+
+2. Write a function that accepts a string and prints the number of uppercase letters and lowercase
+letters.
+
+def upper_lower_count(word):
+    lowercase_count, uppercase_count = 0, 0
+
+    for i in range(len(word)):
+        if ord(word[i]) in range(97, 123):
+            lowercase_count += 1
+        elif ord(word[i]) in range(65, 91):
+            uppercase_count +=1
+        else:
+            print(word[i], "is not an alphabet")
+    print ("No. of Uppercase characters :{} No. of Lower case characters : {}".format(uppercase_count, lowercase_count))
+    return  
+
+upper_lower_count("abcSdefPghijQkl")
+========================================================================================
+
+
+3. Create a function that takes a list and returns a new list with unique elements of the first list.
+
+def unique_list(arr):
+    print(list(set(arr)))
+
+unique_list([1,2,3,2,3,1,4,3,5,87,7,78,99,99])
+========================================================================================
+
+
+4. Write a program that accepts a hyphen-separated sequence of words as input and prints the words
+in a hyphen-separated sequence after sorting them alphabetically.
+
+def sorted_sequence(input):
+    sequence = input.split("-")
+    sequence.sort()
+    output = "-".join(sequence)
+    print (output)
+    return 
+sorted_sequence("london-dubai-sanfrancisco-oregon-mumbai-newyork")
+========================================================================================
+
+
+5. Write a program that accepts a sequence of lines as input and prints the lines after making all
+characters in the sentence capitalized.
+
+print("Enter/Paste your content. Ctrl-D or Ctrl-Z ( windows ) to save it.")
+contents = []
+while True:
+    try:
+        line = input()
+    except EOFError:
+        break
+    contents.append(line)
+
+output = "\n".join(contents).upper()
+print(output)
+========================================================================================
+
+
+6. Define a function that can receive two integral numbers in string form and compute their sum and
+print it in the console.
+
+def sum_of_strings(input):
+    list_of_numbers = []
+    for i in input:
+        list_of_numbers.append(int(i)) 
+    print (sum(list_of_numbers))
+    return
+sum_of_strings("45")
+========================================================================================
+
+
+7. Define a function that can accept two strings as input and print the string with the maximum length in the console. If two strings have the same length, then the function should print both the strings line
+by line.
+
+def lengthy_word(word1, word2):
+    length1 = len(word1)
+    length2 = len(word2)
+    if length1 > length2:
+        print (word1)
+    elif length2 > length1:
+        print (word2)
+    else:
+        print(word1,"\n",word2)
+    return
+
+lengthy_word("apples","oranges")
+========================================================================================
+
+
+8. Define a function which can generate and print a tuple where the values are square of numbers
+between 1 and 20 (both 1 and 20 included).
+
+def squared_number():
+    output = []
+    for i in range(1,21):
+        square = i*i
+        output.append(square)
+    print (tuple(output))
+    return
+
+squared_number()
+========================================================================================
+
+
+9. Write a function called showNumbers that takes a parameter called limit. It should print all the
+numbers between 0 and limit with a label to identify the even and odd numbers.
+
+def showNumbers(limit):
+    for i in range(limit+1):
+        if i % 2 == 0:
+            print(i, "EVEN")
+        else:
+            print(i, "ODD")
+    return
+
+showNumbers(10)
+========================================================================================
+
+
+10. Write a program which uses filter() to make a list whose elements are even numbers between 1
+and 20 (both included)
+
+seq = [x for x in range(1,21)]
+result = filter(lambda x: x % 2 == 0,seq)
+print(list(result))
+========================================================================================
+
+
+11. Write a program which uses map() and filter() to make a list whose elements are squares of even
+numbers in [1,2,3,4,5,6,7,8,9,10].
+
+original_list = [1,2,3,4,5,6,7,8,9,10]
+even = filter(lambda y: y % 2 == 0, original_list)
+result = map(lambda x: x*x, even)
+print(list(result))
+=======================================
+
+
+12. Write a function to compute 5/0 and use try/except to catch the exceptions
+=======================================
+
+
+13. Flatten the list [1,2,3,4,5,6,7] into 1234567 using reduce().
+
+import functools
+original_list = [1,2,3,4,5,6,7]
+result = functools.reduce(lambda a,b : str(a)+str(b),original_list )
+print(str(result))
+=======================================
+
+
+14. Write a program in Python to find the values which are not divisible by 3 but are a multiple of 7.
+Make sure to use only higher order functions.
+
+sequence = [1,2,3,4,4,5,6,49, 70, 77,14,35,99]
+
+def divisibility(num):
+    if num % 3 != 0 and num % 7 == 0:
+        return True
+    else:
+        return False
+
+result = filter(divisibility, sequence)
+print(list(result))
+========================================================================================
+
+
+15. Write a program in Python to multiply the elements of a list by itself using a traditional function
+and pass the function to map() to complete the operation.
+
+sequence = [1,2,3,4,4,5,6,99]
+def squaring(num):
+    return num*num
+result = map(squaring,sequence)
+print(list(result))
+========================================================================================
+
+
+16. What is the output of the following codes:
+(i)
+2
+--------------------------------------------------------------------------
+(ii)
+after f
+after f?
+Traceback (most recent call last):
+  File "T3-t4.py", line 150, in <module>
+    a()
+  File "T3-t4.py", line 145, in a
+    f(x,4)
+NameError: name 'f' is not defined
+========================================================================================
