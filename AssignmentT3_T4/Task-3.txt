@@ -1,0 +1,117 @@
+1. Create a list of 10 elements of four different data types like int, string, complex and float.
+
+list1 = [1, 2, 5,"Training", 5+2j, "San Francisco", "Quebec", 7.89, 9.98, 94.2]
+==============================================================================================
+
+
+2. Create a list of size 5 and execute the slicing structure.
+
+list2 = [1, 2, 3, 4, 5]
+#To obtain whole list
+print (list2[:])
+
+#To fetch values of index 1 to 3
+print(list2[1:4])
+
+#To fetch reversed list
+print (list2[::-1])
+==============================================================================================
+
+
+3. Write a program to get the sum and multiply of all the items in a given list.
+
+list3 = [10,20,30,40,50,60,70]
+print ("Given list is", list4)
+
+add = sum(list3)
+print("The sum of all values in the list is ", add)
+
+if len(list3) > 0:
+    product = 1
+    for i in range(len(list3)):
+        product = product * list3[i]
+    print("Product of values in the list is", product)
+else:
+    print("List is empty")
+==============================================================================================
+
+
+4. Find the largest and smallest number from a given list.
+
+list4 = [1,2,3,4,5,6,89,0,-9,-100]
+minimum_val = min(list4)
+maximum_val = max(list4)
+print ("Given list is", list4)
+print("The largest and smallest number from the given list are {} and {} respectively.".format(maximum_val, minimum_val,))
+==============================================================================================
+
+
+5. Create a new list which contains the specified numbers after removing the even numbers from a
+predefined list.
+
+original_ist = [1, 3, 4, 6, 7, 9, 3, 0, 11, 66, 33, 67, 69 ]
+
+modified_list = []
+for i in range(len(original_ist)):
+    if original_ist[i] % 2 != 0:
+        modified_list.append(original_ist[i])
+print("Original list is", original_ist)
+print("New modified list is", modified_list)
+==============================================================================================
+
+
+6. Create a list of elements such that it contains the squares of the first and last 5 elements between
+1 and30 (both included).
+
+list6 = []
+for i in range(1,6):
+    list6.append(i**2)
+
+for i in range(26,31):
+    list6.append(i**2)
+
+print(list6)
+==============================================================================================
+
+
+7. Write a program to replace the last element in a list with another list.
+
+sample_1 = [1,3,5,7,9,10] 
+sample_2 = [2,4,6,8]
+print("Sample Inputs are {}, {}".format(sample_1, sample_2))
+
+result = sample_1[:-1] + sample_2
+print("Resultant list after replacing the last element with another list is", result)=======================================
+==============================================================================================
+
+
+8. Create a new dictionary by concatenating the following two dictionaries.
+
+Sample input: 
+a={1:10,2:20} 
+b={3:30,4:40}
+a.update(b)
+print(a)
+==============================================================================================
+
+
+9. Create a dictionary that contain numbers in the form(x:x*x) where x takes all the values between 1
+and n(both 1 and n included).
+
+n = int(input("Enter the value of n: " ))
+hash_map = {}
+for i in range(1, n+1):
+    hash_map[i] = i*i
+print(hash_map)
+==============================================================================================
+
+
+10. Write a program which accepts a sequence of comma-separated numbers from console and
+generates a list and a tuple which contains every number in the form of string.
+
+inp = input("Enter comma separated numbers: ")
+num_array = filter(lambda x: len(x) > 0, inp.split(","))
+print(list(num_array))
+print(tuple(num_array))
+==============================================================================================
+
