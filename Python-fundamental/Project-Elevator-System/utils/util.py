@@ -30,13 +30,17 @@ class Elevator(object):
         print("You have reached at floor {}, your destination.".format(destination))
 
     def displayCurrentToDestinationFloors (self, current, destination):
+        import time
+
         if current < destination:
             for i in range(current+1,destination+1):
                 print(i)
+                time.sleep(1)
         elif current > destination:
             res_array = [x for x in range(destination, current)]
             for y in res_array[::-1]:
                 print(y)
+                time.sleep(1)
         return
 
     def showingDirection (self, current, destination):
