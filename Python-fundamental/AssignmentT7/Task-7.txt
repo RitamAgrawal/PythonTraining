@@ -1,0 +1,126 @@
+1. Write a program that calculates and prints the value according to the given formula:
+Q= Square root of [(2*C*D)/H]
+Following are the fixed values of C and H:
+C is 50.
+H is 30.
+D is a variable whose values should be input to your program in a comma-separated sequence.
+--------------------------------------------------------------------------------------------------
+import math
+D = input("Enter comma separated numeric value: ")
+D_array = D.split(",")
+D_numeral = int("".join(D_array))
+Q = math.sqrt((2+50*D_numeral)/30)
+print(Q)
+=================================================================================================
+2. Define a class named Shape and its subclass Square. The Square class has an init function which
+takes length as argument. Both classes have an area function which can print the area of the shape
+where Shape’s area is 0 by default.
+--------------------------------------------------------------------------------------------------
+class Shape():
+    def __init__(self):
+        pass
+
+    def area(self, shape_ar=0):
+        print("Area of the shape is:", shape_ar*shape_ar)
+        return shape_ar*shape_ar
+
+class Square(Shape):
+    def __init__(self, length = 0):
+        self.length = length
+
+sh = Shape()
+sh.area(10)
+sq = Square(sh)
+sq.area()
+sq.area(65)
+=================================================================================================
+3. Create a class to find three elements that sum to zero from a set of n real numbers
+Input array: [-25,-10,-7,-3,2,4,8,10]
+Expected output: [[-10,2,8],[-7,-3,10]]
+--------------------------------------------------------------------------------------------------
+class ZeroAddition():
+    def __init__(self):
+        pass
+    def zeroAdd(self,Input_array):
+        # Expected output: [[-10,2,8],[-7,-3,10]]
+        sorted_array = sorted(Input_array)
+        res = []
+        for i in range(len(sorted_array)):
+            first = sorted_array[i]
+            second = sorted_array[-(i+1)]
+            third = abs(first) - abs(second)
+            if third in sorted_array:
+                res.append([first, second, third])
+        return res
+
+add = ZeroAddition()
+input_array = [-25,-10,-7,-3,2,4,8,10]
+output = add.zeroAdd(input_array)
+print(output)
+=================================================================================================
+4. Create a Time class and initialize it with hours and minutes.
+Create a method addTime which should take two Time objects and add them.
+E.g.- (2 hour and 50 min)+(1 hr and 20 min) is (4 hr and 10 min)
+Create another method displayTime which should print the time.
+Also create a method displayMinute which should display the total minutes in the Time.
+E.g.- (1 hr 2 min) should display 62 minute.
+--------------------------------------------------------------------------------------------------
+class Time():
+    def __init__(self, hours, minutes):
+        self.updatedTime = None
+        self.hours = hours
+        self.minutes = minutes
+
+    def getHours(self):
+        return self.hours
+
+    def getMinutes(self):
+        return self.minutes
+        
+    def getTime(self):
+        return self.updatedTime
+
+    def addTime(self, time2):
+        hours = self.getHours() + time2.getHours()
+        mins = self.getMinutes() + time2.getMinutes()
+        if mins >= 60:
+            additional_hours = mins//60
+        hours += additional_hours
+        mins = mins - (additional_hours*60)
+        self.updatedTime = print(hours,"hours",mins,"minutes")
+        return 
+
+    def displayTime(self):
+        hr = self.getHours()
+        mins = self.getMinutes()
+        output = "Time is: {}:{}".format(hr,mins)
+        # print("Time is: ",hr,":",mins)
+        return output
+
+    def displayMinute(self):
+        minutes = (self.getHours() * 60) + self.getMinutes()
+        return minutes
+
+
+t1 = Time(1,20)
+t2 = Time(2,50)
+t3 = t1.addTime(t2)
+time1 = t1.displayTime()
+time2 = t2.displayTime()
+print(time1)
+print(time2)
+minutes1 = t1.displayMinute()
+minutes2 = t2.displayMinute()
+print(minutes1)
+print(minutes2)
+
+
+yearPasses() should increase age by the integer value that you are passing inside the function.
+amIOld() should perform the following conditional actions:I
+f age is between 0 and <13, print “You are young”.
+If age is >=13 and <=19 , print “You are a teenager”.
+Otherwise, print “You are old”.
+=================================================================================================
+5. Write a Person class with an instance variable “age” and a constructor that takes an integer as a
+parameter. The constructor must assign the integer value to the age variable after confirming the
+argument passed is not negative; if a negative argument is passed then the constructor should
